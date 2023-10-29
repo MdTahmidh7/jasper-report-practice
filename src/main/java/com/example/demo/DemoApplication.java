@@ -40,18 +40,16 @@ public class DemoApplication {
 		salary.setAssesmentYear("2023");
 		salary.setTinNumber("1234567886");
 		return salary;
-
-
-	/*	System.out.println("Okk");
-
-		Salary data = Repo.getInfo();
-
-		return data ;*/
 	}
 
 	@GetMapping("/report/s")
 	public String generateReport() throws FileNotFoundException, JRException {
 		return service.exportReport("pdf");
+	}
+
+	@GetMapping("/report/c")
+	public String generateCommissionReport() throws FileNotFoundException, JRException{
+		return service.exportCommissionReport("pdf");
 	}
 
 }
